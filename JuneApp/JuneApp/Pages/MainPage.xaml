@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:JuneApp"
+             x:Class="JuneApp.MainPage">
+
+    <StackLayout>
+        <Grid VerticalOptions="Fill" HorizontalOptions="Fill" RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="3" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Create Tab 1 elements-->
+            <ContentView HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="0" Grid.Column="0" BackgroundColor="#7F00FF">
+                <ContentView.Content>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <Label VerticalTextAlignment="Center" 
+                                   TextColor="White" 
+                                   HorizontalTextAlignment="Center" 
+                                   Text="User Info" 
+                                   FontAttributes="Bold" 
+                                   FontSize="Large" />
+                    </StackLayout>
+                </ContentView.Content>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding TabButtonPressed}" CommandParameter="1"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <!--Created Tab 2 elements-->
+            <ContentView HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="0" Grid.Column="1" BackgroundColor="#a044ff">
+                <ContentView.Content>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label VerticalTextAlignment="Center" 
+                                   TextColor="White" 
+                                   HorizontalTextAlignment="Center" 
+                                   Text="Pictures" 
+                                   FontAttributes="Bold" 
+                                   FontSize="Large" />
+                    </StackLayout>
+                </ContentView.Content>
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding TabButtonPressed}" CommandParameter="2"/>
+                </ContentView.GestureRecognizers>
+            </ContentView>
+
+            <!--Created highlighted selection using BoxView-->
+            <BoxView Grid.Row="1" Grid.Column="{Binding SelectedColumnIndex}" HorizontalOptions="Fill" BackgroundColor="Black" />
+
+            <!--Main content view holds the content on changing tabs-->
+            <ContentView Grid.Row="2" Grid.ColumnSpan="2" Content="{Binding ViewContent}" />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

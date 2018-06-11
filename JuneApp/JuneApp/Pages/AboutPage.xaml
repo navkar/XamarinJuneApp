@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JuneApp.AboutPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="CornflowerBlue">
+            <Label TextColor="White" FontAttributes="Bold" FontSize="Large" Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button FontAttributes="Bold" FontSize="Large" Text="Display Alert!" Command="{Binding AlertCommand}" />
+            <Button FontAttributes="Bold" FontSize="Large" Text="Go Back!" Command="{Binding PopCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,3 +1,4 @@
+using FreshMvvm;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,8 +12,10 @@ namespace JuneApp
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
-		}
+            var page = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
+            var basicNavContainer = new FreshNavigationContainer(page);
+            MainPage = basicNavContainer;
+        }
 
 		protected override void OnStart ()
 		{
