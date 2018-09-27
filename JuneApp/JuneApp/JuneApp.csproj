@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="FreshMvvm" Version="2.2.4" />
-    <PackageReference Include="FreshMvvmIconize" Version="1.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
   </ItemGroup>
 
